@@ -6,11 +6,11 @@
 /*   By: agardet <agardet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/26 23:30:53 by agardet           #+#    #+#             */
-/*   Updated: 2021/06/27 10:20:11 by agardet          ###   ########lyon.fr   */
+/*   Updated: 2021/06/27 11:18:19 by agardet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/pipex.h"
+#include <pipex.h>
 
 void	pipex_data_init(t_pdata data)
 {

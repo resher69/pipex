@@ -6,11 +6,11 @@
 /*   By: agardet <agardet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/27 01:31:58 by agardet           #+#    #+#             */
-/*   Updated: 2021/06/27 10:08:17 by agardet          ###   ########lyon.fr   */
+/*   Updated: 2021/06/27 11:18:17 by agardet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/pipex.h"
+#include <pipex.h>
 
 
 int	open_file(const char *path, int flags, int perm)

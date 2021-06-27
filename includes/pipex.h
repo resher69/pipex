@@ -36,7 +36,7 @@ typedef union u_pipe
 }	t_pipe;
 
 
-int		pen_file(const char *path, int flags, int perm);
+int		open_file(const char *path, int flags, int perm);
 void	pipex_data_init(t_pdata data);
 int		pipex_pipe_init(t_pipe *u_pipe);
 int 	pipex_parsing(t_pdata data, int argc, char **argv, char **envp);
