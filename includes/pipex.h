@@ -9,6 +9,7 @@
 # include <fcntl.h>
 # include <errno.h>
 # include <string.h>
+# include <stdbool.h>
 
 typedef struct s_data
 {
@@ -36,12 +37,8 @@ typedef union u_pipe
 }	t_pipe;
 
 
-int		open_file(const char *path, int flags, int perm);
-void	pipex_data_init(t_pdata data);
-int		pipex_pipe_init(t_pipe *u_pipe);
-int 	pipex_parsing(t_pdata data, int argc, char **argv, char **envp);
-void	pipex_free_path(t_pdata data);
+bool 	pipex_parsing(t_pdata data, int argc, char **argv, char **envp);
+void	pipex_init(t_pdata data);
 int		pipex_kill(t_pdata data);
-void	pipex_exec_cmd1(t_pdata data, t_pipe pipe, char **envp);
-void	pipex_exec_cmd2(t_pdata data, t_pipe pipe, char **envp);
+int		pipe_init(t_pipe *u_pipe);
 #endif

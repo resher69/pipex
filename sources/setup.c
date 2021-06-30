@@ -6,13 +6,13 @@
 /*   By: agardet <agardet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/26 23:30:53 by agardet           #+#    #+#             */
-/*   Updated: 2021/06/27 11:18:19 by agardet          ###   ########lyon.fr   */
+/*   Updated: 2021/06/30 03:59:44 by agardet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <pipex.h>
 
-void	pipex_data_init(t_pdata data)
+void	pipex_init(t_pdata data)
 {
 	data->path = 0;
 	data->cmd1.command = 0;
@@ -21,14 +21,14 @@ void	pipex_data_init(t_pdata data)
 	data->cmd2.fd = -1;
 }
 
-int	pipex_pipe_init(t_pipe *u_pipe)
+int	pipe_init(t_pipe *u_pipe)
 {
-	if (pipe(u_pipe->tab) != 0)
+	if (pipe(u_pipe->tab) < 0)
 	{
 		perror("pipe");
 		return (EXIT_FAILURE);
 	}
-	return (EXIT_SUCCESS);	
+	return (EXIT_SUCCESS);
 }
 
 void	pipex_free_path(t_pdata data)
@@ -41,6 +41,7 @@ void	pipex_free_path(t_pdata data)
 	free(data->path);
 	data->path = 0;
 }
+
 int		pipex_kill(t_pdata data)
 {
 	int	i;

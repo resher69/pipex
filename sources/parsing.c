@@ -6,7 +6,7 @@
 /*   By: agardet <agardet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/27 01:31:58 by agardet           #+#    #+#             */
-/*   Updated: 2021/06/27 11:18:17 by agardet          ###   ########lyon.fr   */
+/*   Updated: 2021/06/30 03:37:53 by agardet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	open_file(const char *path, int flags, int perm)
 	return (fd);
 }
 
-int pipex_parsing(t_pdata data, int argc, char **argv, char **envp)
+bool pipex_parsing(t_pdata data, int argc, char **argv, char **envp)
 {
 	if (argc != 5)
 		return (write(1, "usage: pipex <file1> <cmd1> <cmd2> <file2>\n", 44));
