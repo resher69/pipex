@@ -1,36 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agardet <agardet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/27 19:14:10 by agardet           #+#    #+#             */
-/*   Updated: 2021/05/13 18:19:28 by agardet          ###   ########lyon.fr   */
+/*   Created: 2021/03/02 15:22:27 by agardet           #+#    #+#             */
+/*   Updated: 2021/03/17 14:29:03 by agardet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+void	ft_putchar(char c)
 {
-	size_t	i;
-	size_t	j;
-
-	i = 0;
-	j = 0;
-	if (!dst)
-		return ((size_t) NULL);
-	while (src[j] != '\0')
-		j++;
-	if (dstsize == 0)
-		return (j);
-	while (i < dstsize - 1 && src[i] != '\0')
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	if (dstsize != 0)
-		dst[i] = '\0';
-	return (j);
+	write(1, &c, 1);
 }

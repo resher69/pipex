@@ -6,12 +6,11 @@
 /*   By: agardet <agardet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/27 01:31:58 by agardet           #+#    #+#             */
-/*   Updated: 2021/06/30 03:37:53 by agardet          ###   ########lyon.fr   */
+/*   Updated: 2021/06/30 04:07:30 by agardet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <pipex.h>
-
 
 int	open_file(const char *path, int flags, int perm)
 {
@@ -29,7 +28,7 @@ int	open_file(const char *path, int flags, int perm)
 	return (fd);
 }
 
-bool pipex_parsing(t_pdata data, int argc, char **argv, char **envp)
+bool	pipex_parsing(t_pdata data, int argc, char **argv, char **envp)
 {
 	if (argc != 5)
 		return (write(1, "usage: pipex <file1> <cmd1> <cmd2> <file2>\n", 44));
@@ -42,8 +41,8 @@ bool pipex_parsing(t_pdata data, int argc, char **argv, char **envp)
 		}
 		++envp;
 	}
-    data->cmd1.fd = open_file(argv[1], O_RDONLY, 0);
-    data->cmd2.fd = open_file(argv[4], O_RDWR | O_CREAT | O_TRUNC, 420);
+	data->cmd1.fd = open_file(argv[1], O_RDONLY, 0);
+	data->cmd2.fd = open_file(argv[4], O_RDWR | O_CREAT | O_TRUNC, 420);
 	if (data->cmd1.fd < 0 || data->cmd2.fd < 0)
 		return (EXIT_FAILURE);
 	data->cmd1.command = ft_split(argv[2], ' ');

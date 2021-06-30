@@ -6,13 +6,13 @@
 /*   By: agardet <agardet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 19:09:09 by agardet           #+#    #+#             */
-/*   Updated: 2021/01/14 10:38:50 by agardet          ###   ########lyon.fr   */
+/*   Updated: 2021/05/13 17:18:50 by agardet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strcpy(char *dst, const char *src)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (src[i] != '\0')

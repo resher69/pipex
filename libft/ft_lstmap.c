@@ -6,7 +6,7 @@
 /*   By: agardet <agardet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 16:52:08 by agardet           #+#    #+#             */
-/*   Updated: 2021/01/14 14:39:50 by agardet          ###   ########lyon.fr   */
+/*   Updated: 2021/05/13 17:27:17 by agardet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,16 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 
 	if (!f || !lst)
 		return (NULL);
-	if (!(buffer = ft_lstnew(f(lst->content))))
+	buffer = ft_lstnew(f(lst->content));
+	if (!buffer)
 		return (NULL);
 	new_lst = buffer;
 	cpy = lst;
 	cpy = cpy->next;
 	while (cpy)
 	{
-		if (!(buffer = ft_lstnew(cpy)))
+		buffer = ft_lstnew(cpy);
+		if (!buffer)
 		{
 			ft_lstclear(&new_lst, del);
 			return (NULL);

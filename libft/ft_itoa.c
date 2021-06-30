@@ -6,7 +6,7 @@
 /*   By: agardet <agardet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 11:28:11 by agardet           #+#    #+#             */
-/*   Updated: 2021/01/14 13:21:09 by agardet          ###   ########lyon.fr   */
+/*   Updated: 2021/05/13 17:27:42 by agardet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static size_t	ft_len_number(int n)
 	return (len);
 }
 
-static void		fill_str(char *str, long long nb, int len)
+static void	fill_str(char *str, long long nb, int len)
 {
 	while (nb > 0)
 	{
@@ -41,7 +41,7 @@ static void		fill_str(char *str, long long nb, int len)
 	}
 }
 
-char			*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	char		*str;
 	long long	nb;
@@ -53,7 +53,8 @@ char			*ft_itoa(int n)
 	len = ft_len_number(nb);
 	if (nb < 0)
 		neg = 1;
-	if (!(str = ft_calloc(sizeof(char), (len + neg + 1))))
+	str = ft_calloc(sizeof(char), (len + neg + 1));
+	if (!str)
 		return (NULL);
 	if (nb == 0)
 		str[0] = '0';

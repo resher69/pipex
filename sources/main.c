@@ -6,13 +6,11 @@
 /*   By: agardet <agardet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 02:12:11 by agardet           #+#    #+#             */
-/*   Updated: 2021/06/30 03:56:07 by agardet          ###   ########lyon.fr   */
+/*   Updated: 2021/06/30 04:06:36 by agardet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <pipex.h>
-
-
 
 void	pipex_exec_cmd1(t_pdata data, t_pipe u_pipe, char **envp)
 {
@@ -33,7 +31,7 @@ void	pipex_exec_cmd1(t_pdata data, t_pipe u_pipe, char **envp)
 		tmp = ft_strjoin(ft_strjoin(data->path[i], "/"), buf);
 		execve(tmp, &data->cmd1.command[0], envp);
 	}
-		perror(data->cmd1.command[0]);
+	perror(data->cmd1.command[0]);
 }
 
 void	pipex_exec_cmd2(t_pdata data, t_pipe u_pipe, char **envp)
@@ -55,14 +53,14 @@ void	pipex_exec_cmd2(t_pdata data, t_pipe u_pipe, char **envp)
 		tmp = ft_strjoin(ft_strjoin(data->path[i], "/"), buf);
 		execve(tmp, &data->cmd2.command[0], envp);
 	}
-		perror(data->cmd1.command[0]);
+	perror(data->cmd1.command[0]);
 }
 
 int	main(int argc, char **argv, char **envp)
 {
 	t_pdata	data;
-	t_pipe		u_pipe;
-	int			tmp;
+	t_pipe	u_pipe;
+	int		tmp;
 
 	data = malloc(sizeof(struct s_data));
 	if (!data)

@@ -6,7 +6,7 @@
 /*   By: agardet <agardet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 16:44:04 by kali              #+#    #+#             */
-/*   Updated: 2021/01/14 10:24:01 by agardet          ###   ########lyon.fr   */
+/*   Updated: 2021/05/13 17:26:37 by agardet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*lst;
 
-	if (!(lst = (t_list *)malloc(sizeof(t_list))))
+	lst = (t_list *)malloc(sizeof(t_list));
+	if (!lst)
 		return (NULL);
 	lst->content = content;
 	lst->next = NULL;

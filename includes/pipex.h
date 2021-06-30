@@ -26,7 +26,7 @@ typedef struct s_data
 	char	**path;
 }t_data, *t_pdata;
 
-typedef union u_pipe 
+typedef union u_pipe
 {
 	struct s_channel
 	{
@@ -36,8 +36,7 @@ typedef union u_pipe
 	int	tab[2];
 }	t_pipe;
 
-
-bool 	pipex_parsing(t_pdata data, int argc, char **argv, char **envp);
+bool	pipex_parsing(t_pdata data, int argc, char **argv, char **envp);
 void	pipex_init(t_pdata data);
 int		pipex_kill(t_pdata data);
 int		pipe_init(t_pipe *u_pipe);

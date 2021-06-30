@@ -6,7 +6,7 @@
 /*   By: agardet <agardet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/21 12:58:22 by agardet           #+#    #+#             */
-/*   Updated: 2021/01/09 14:52:12 by agardet          ###   ########lyon.fr   */
+/*   Updated: 2021/05/13 17:15:02 by agardet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	end = ft_strlen(s1);
 	while (end != begin && ft_strchr(set, s1[end - 1]))
 		end--;
-	if (!(result = ft_calloc(((end - begin) + 1), sizeof(char))))
+	result = ft_calloc(((end - begin) + 1), sizeof(char));
+	if (!result)
 		return (NULL);
 	while (begin < end)
 	{

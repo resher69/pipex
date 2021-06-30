@@ -6,7 +6,7 @@
 /*   By: agardet <agardet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/26 23:30:53 by agardet           #+#    #+#             */
-/*   Updated: 2021/06/30 03:59:44 by agardet          ###   ########lyon.fr   */
+/*   Updated: 2021/06/30 04:07:47 by agardet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	pipex_free_path(t_pdata data)
 	data->path = 0;
 }
 
-int		pipex_kill(t_pdata data)
+int	pipex_kill(t_pdata data)
 {
 	int	i;
 
